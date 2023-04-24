@@ -41,3 +41,29 @@ int print_percent(va_list args)
 putchar('%');
 return (1);
 }
+
+/**
+ * print_int - Prints an integer
+ * @args: A va_list pointing to the integer to be printed
+ * Return: The number of characters printed
+ */
+int print_int(va_list args)
+{
+int n = va_arg(args, int);
+int num_digits = 0;
+
+if (n < 0)
+{
+putchar('-');
+num_digits++;
+n = -n;
+}
+
+if (n / 10)
+num_digits += print_int(args);
+
+putchar((n % 10) + '0');
+num_digits++;
+
+return (num_digits);
+}

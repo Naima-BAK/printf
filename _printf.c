@@ -8,11 +8,14 @@
 
 int _printf(const char *format, ...)
 {
-int count = 0;
-int i = 0;
 va_list args;
+int i, count = 0;
+if (format == NULL)
+return (-1);
+
 va_start(args, format);
-while (format && format[i])
+
+for (i = 0; format[i] != '\0'; i++)
 {
 if (format[i] == '%')
 {
@@ -22,24 +25,23 @@ i++;
 while (format[i] == ' ')
 i++;
 if (format[i] == '%')
-{
-putchar('%');
-count++;
-}
+count += print_percent(args);
 else if (format[i] == 'c')
 count += print_char(args);
 else if (format[i] == 's')
 count += print_string(args);
-else
-return (-1);
+else if (format[i] == 'i')
+count += print_int(args);
+else if (format[i] == 'd')
+count += print_int(args);
 }
 else
 {
 putchar(format[i]);
 count++;
 }
-i++;
 }
+
 va_end(args);
 return (count);
 }
