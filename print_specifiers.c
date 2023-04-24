@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include "print_specifiers.h"
+#include "main.h"
 /**
  * print_c - Prints a character
  * @args: A list of arguments

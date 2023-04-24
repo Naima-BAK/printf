@@ -19,17 +19,17 @@ format++;
 switch (*format)
 {
 case 'c':
-num_chars += print_c(args);
+num_chars += print_c(va_arg(args, int));
 break;
 case 's':
-num_chars += print_s(args);
+num_chars += print_s(va_arg(args, char *));
 break;
 case 'd':
 case 'i':
-num_chars += print_d(args);
+num_chars += print_d(va_arg(args, int));
 break;
 case '%':
-num_chars += print_percent(args);
+num_chars += print_percent();
 break;
 default:
 break;
