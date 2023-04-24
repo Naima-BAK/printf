@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdio.h>
-#include "print_specifiers.h"
 
 /**
  * _printf - Printf function
