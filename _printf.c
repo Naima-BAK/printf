@@ -1,6 +1,5 @@
 #include "main.h"
 #include "functions.h"
-
 /**
  * _printf - produces output according to a format.
  * @format: character string containing directives.
@@ -24,25 +23,20 @@ while (format[i] == ' ')
 i++;
 if (format[i] == '%')
 {
-format++;
-if (*format == 'c')
-count += print_char(args);
-else if (*format == 's')
-count += print_string(args);
-else if (*format == '%')
-{
 putchar('%');
 count++;
 }
+else if (format[i] == 'c')
+count += print_char(args);
+else if (format[i] == 's')
+count += print_string(args);
 else
 return (-1);
 }
 else
 {
-putchar(*format);
+putchar(format[i]);
 count++;
-}
-format++;
 }
 i++;
 }
