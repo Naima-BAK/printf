@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdarg.h>
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
 #include "main.h"
 /**
  * print_char - Prints a character
@@ -41,42 +41,4 @@ int print_percent(va_list args)
 putchar('%');
 return (1);
 }
-/**
- * _printf - produces output according to a format.
- * @format: character string containing directives.
- * Return: number of characters printed (excluding null byte)
- */
-int _printf(const char *format, ...)
-{
-va_list args;
-int count = 0;
-va_start(args, format);
-if (!format)
-return (-1);
-while (*format)
-{
-if (*format == '%')
-{
-format++;
-if (*format == 'c')
-count += print_char(args);
-else if (*format == 's')
-count += print_string(args);
-else if (*format == '%')
-{
-putchar('%');
-count++;
-}
-else
-return (-1);
-}
-else
-{
-putchar(*format);
-count++;
-}
-format++;
-}
-va_end(args);
-return (count);
-}
+#endif
