@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h> 
+#include <unistd.h>
 /**
  * _write_char - writes the character.
  * @c: The character to print
