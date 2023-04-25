@@ -1,5 +1,6 @@
 #ifndef MAIN_H
 #define MAIN_H
+#include <stdint.h>
 
 #include <stdlib.h>
 #include <stdarg.h>
@@ -29,6 +30,20 @@ typedef union pointer
 	char c[sizeof(void *)];
 } my_pointer;
 
+/**
+ * struct flags - struct containing flags to "turn on"
+ * when a flag specifier is passed to _printf()
+ * @plus: flag for the '+' character
+ * @space: flag for the ' ' character
+ * @hash: flag for the '#' character
+ */
+typedef struct flags
+{
+	int plus;
+	int space;
+	int hash;
+} flags_t;
+
 int parser(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
 int _write_char(char);
@@ -50,5 +65,8 @@ int print_hex(va_list list);
 int print_octal(va_list list);
 int rot13(va_list);
 int print_reversed(va_list arg);
-int print_pointer(va_list list);
+int print_hl(uintptr_t n);
+int print_pointer(va_list valist);
+int _puts(char *str);
+char *convert(unsigned long int num, int base, int lowercase);
 #endif
