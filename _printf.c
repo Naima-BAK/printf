@@ -23,6 +23,7 @@ conver_t f_list[] = {
 {"o", print_octal},
 {"r", print_reversed},
 {"R", rot13},
+{"p", print_pointer},
 {NULL, NULL}
 };
 

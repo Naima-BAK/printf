@@ -18,6 +18,16 @@ int (*f)(va_list);
 };
 typedef struct convert conver_t;
 
+/**
+ * union pointer - union variable to handle pointer byte to byte
+ * @ptr: void pointer to store a pointer.
+ * @c: char array to handle each byte in ptr.
+ */
+typedef union pointer
+{
+	void *ptr;
+	char c[sizeof(void *)];
+} my_pointer;
 
 int parser(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
@@ -40,4 +50,6 @@ int print_hex(va_list list);
 int print_octal(va_list list);
 int rot13(va_list);
 int print_reversed(va_list arg);
+int print_pointer(va_list list);
+int print_hex_recursion(unsigned long int n);
 #endif
