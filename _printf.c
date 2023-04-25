@@ -21,6 +21,8 @@ conver_t f_list[] = {
 {"x", print_hex},
 {"X", print_heX},
 {"o", print_octal},
+{"r", print_reversed},
+{"R", rot13},
 {NULL, NULL}
 };
 
