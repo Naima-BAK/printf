@@ -17,6 +17,12 @@ _printf("String:[%s]\n", "I am a string !");
 printf("String:[%s]\n", "I am a string !");
 _printf("Percent:[%%]\n");
 printf("Percent:[%%]\n");
+printf(NULL);
+_printf(NULL);
+printf("Test: %s\n", NULL);
+_printf("Test: %s\n", NULL);
+printf("%s\n", NULL);
+_printf("%s\n", NULL);
 
 return (0);
 }
