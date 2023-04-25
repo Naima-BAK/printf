@@ -18,6 +18,8 @@ conver_t f_list[] = {
 {"i", print_integer},
 {"u", unsigned_integer},
 {"b", print_binary},
+{"x", print_hex},
+{"X", print_heX},
 {NULL, NULL}
 };
 
