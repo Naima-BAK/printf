@@ -52,14 +52,3 @@ int d = va_arg(args, int);
 printf("%d", d);
 return (snprintf(NULL, 0, "%d", d));
 }
-/**
- * print_percent - Prints a percent sign
- * @args: A list of arguments
- * Return: The number of characters printed
- */
-int print_percent(va_list args)
-{
-(void) args;
-putchar('%');
-return (1);
-}
