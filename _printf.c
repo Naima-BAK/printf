@@ -20,6 +20,7 @@ conver_t f_list[] = {
 {"b", print_binary},
 {"x", print_hex},
 {"X", print_heX},
+{"o", print_octal},
 {NULL, NULL}
 };
 
