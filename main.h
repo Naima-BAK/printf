@@ -51,5 +51,4 @@ int print_octal(va_list list);
 int rot13(va_list);
 int print_reversed(va_list arg);
 int print_pointer(va_list list);
-int print_hex_recursion(unsigned long int n);
 #endif
