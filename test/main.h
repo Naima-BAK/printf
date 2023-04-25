@@ -5,10 +5,24 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+/**
+* struct convert - defines a structure for symbols and functions
+*
+* @sym: The operator
+* @f: The function associated
+*/
+struct convert
+{
+char *sym;
+int (*f)(va_list);
+};
+typedef struct convert conver_t;
+
+
+int parser(const char *format, conver_t f_list[], va_list arg_list);
 int _printf(const char *format, ...);
-int print_c(va_list args);
-int print_s(va_list args);
-int print_i(va_list args);
-int print_d(va_list args);
-int print_percent(va_list args);
+int _write_char(char);
+int print_char(va_list);
+int print_string(va_list);
+int print_percent(va_list);
 #endif
